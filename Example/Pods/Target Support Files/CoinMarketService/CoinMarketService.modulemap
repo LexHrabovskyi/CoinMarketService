@@ -1,0 +1,6 @@
+framework module CoinMarketService {
+  umbrella header "CoinMarketService-umbrella.h"
+
+  export *
+  module * { export * }
+}
