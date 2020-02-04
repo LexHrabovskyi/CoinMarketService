@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum APIError: Error {
+public enum CoinAPIError: Error {
     case notConnected
     case invalidResponse
     case invalidEndpoint

@@ -9,9 +9,9 @@
 import Foundation
 
 // simplified network class
-public final class NetworkManager {
+public final class CoinMarketManager {
     
-    public static let shared = NetworkManager()
+    public static let shared = CoinMarketManager()
     private let baseURL = URL(string: "https://api.coinmarketcap.com/v1")!
     private let urlSession = URLSession.shared
     private let jsonDecoder: JSONDecoder = {
@@ -25,7 +25,7 @@ public final class NetworkManager {
     
     // MARK: public functions
     
-    public func getMarketData(result: @escaping (Result<CoinListData, APIError>) -> Void) {
+    public func getMarketData(result: @escaping (Result<CoinListData, CoinAPIError>) -> Void) {
         
         let listURL = baseURL.appendingPathComponent(EndpointsCoinMarket.ticker.path)
         fetchResources(url: listURL, completion: result)
@@ -33,7 +33,7 @@ public final class NetworkManager {
     }
     
     // MARK: underlaying functionality
-    private func fetchResources<T: Decodable>(url: URL, completion: @escaping (Result<T, APIError>) -> Void) {
+    private func fetchResources<T: Decodable>(url: URL, completion: @escaping (Result<T, CoinAPIError>) -> Void) {
         
         guard checkURL(url) else { completion(.failure(.invalidEndpoint)); return }
         
@@ -57,7 +57,7 @@ public final class NetworkManager {
         
     }
     
-    private func processResponce<T: Decodable>(_ result: (Result<(URLResponse, Data), Error>), completion: @escaping (Result<T, APIError>) -> Void) {
+    private func processResponce<T: Decodable>(_ result: (Result<(URLResponse, Data), Error>), completion: @escaping (Result<T, CoinAPIError>) -> Void) {
         
         switch result {
         case .success(let (response, data)):

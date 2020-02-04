@@ -28,10 +28,10 @@
 		B74CD6E6EBEA0B642776BCB37850415D /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = EA718A72E676291836EBB46B85242155 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C49D52712466511E332C952834C81FE1 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = D3067EAFD5B0A06885968D137840DB70 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D04AAC8B22E4A4DC4F39891C4E52F251 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = E354F8FD537351F26F7949B4EBFA5101 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D7258EBD23E92333000629C1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7258EBC23E92333000629C1 /* NetworkManager.swift */; };
+		D7258EBD23E92333000629C1 /* CoinMarketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7258EBC23E92333000629C1 /* CoinMarketManager.swift */; };
 		D7258EC423E9240D000629C1 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7258EC323E9240D000629C1 /* CoinData.swift */; };
 		D7258EC923E92431000629C1 /* URLSessionExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7258EC623E92430000629C1 /* URLSessionExtention.swift */; };
-		D7258ECA23E92431000629C1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7258EC723E92430000629C1 /* APIError.swift */; };
+		D7258ECA23E92431000629C1 /* CoinAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7258EC723E92430000629C1 /* CoinAPIError.swift */; };
 		D7258ECB23E92431000629C1 /* EndpointsCoinMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7258EC823E92431000629C1 /* EndpointsCoinMarket.swift */; };
 		DE2A20DF3B862DEE089563E6133691C1 /* CoinMarketService-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 662AFEA1C964DF273C504680BF0B4EE2 /* CoinMarketService-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF382818F311CC2420F73864ECC0BADF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
@@ -118,10 +118,10 @@
 		CE3D9597F3526A4EC48C21D250340B3C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE8AB92729B71471F5C6D22A90D48FF6 /* Pods-CoinMarketService_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoinMarketService_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D3067EAFD5B0A06885968D137840DB70 /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
-		D7258EBC23E92333000629C1 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D7258EBC23E92333000629C1 /* CoinMarketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinMarketManager.swift; sourceTree = "<group>"; };
 		D7258EC323E9240D000629C1 /* CoinData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 		D7258EC623E92430000629C1 /* URLSessionExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionExtention.swift; sourceTree = "<group>"; };
-		D7258EC723E92430000629C1 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		D7258EC723E92430000629C1 /* CoinAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinAPIError.swift; sourceTree = "<group>"; };
 		D7258EC823E92431000629C1 /* EndpointsCoinMarket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsCoinMarket.swift; sourceTree = "<group>"; };
 		DB7F4AEF56A43E7A5E6F7E9F8E8090F1 /* Pods-CoinMarketService_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoinMarketService_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DE35F81C954881204729C569018D98C0 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 		D7258EBB23E9226F000629C1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				D7258EBC23E92333000629C1 /* NetworkManager.swift */,
+				D7258EBC23E92333000629C1 /* CoinMarketManager.swift */,
 				D7258EC523E92418000629C1 /* Supporting network classes */,
 				D7258EC223E923F8000629C1 /* Models */,
 			);
@@ -363,7 +363,7 @@
 		D7258EC523E92418000629C1 /* Supporting network classes */ = {
 			isa = PBXGroup;
 			children = (
-				D7258EC723E92430000629C1 /* APIError.swift */,
+				D7258EC723E92430000629C1 /* CoinAPIError.swift */,
 				D7258EC823E92431000629C1 /* EndpointsCoinMarket.swift */,
 				D7258EC623E92430000629C1 /* URLSessionExtention.swift */,
 			);
@@ -617,9 +617,9 @@
 			files = (
 				D7258EC423E9240D000629C1 /* CoinData.swift in Sources */,
 				D7258EC923E92431000629C1 /* URLSessionExtention.swift in Sources */,
-				D7258EBD23E92333000629C1 /* NetworkManager.swift in Sources */,
+				D7258EBD23E92333000629C1 /* CoinMarketManager.swift in Sources */,
 				D7258ECB23E92431000629C1 /* EndpointsCoinMarket.swift in Sources */,
-				D7258ECA23E92431000629C1 /* APIError.swift in Sources */,
+				D7258ECA23E92431000629C1 /* CoinAPIError.swift in Sources */,
 				FA7C32102A1427321C51F4C2FD59E80F /* CoinMarketService-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

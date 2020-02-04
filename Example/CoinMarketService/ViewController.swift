@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkManager.shared.getMarketData { (result: Result<CoinListData, APIError>) in
+        CoinMarketManager.shared.getMarketData { (result: Result<CoinListData, CoinAPIError>) in
             
             switch result {
             case .success(let newList):
