@@ -28,9 +28,10 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/LexHrabovskyi/CoinMarketService.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
-  s.source_files = 'CoinMarketService/Classes/**/*'
+  s.source_files = 'Source/**/*'
+  s.swift_version = '5.0'
   
   # s.resource_bundles = {
   #   'CoinMarketService' => ['CoinMarketService/Assets/*.png']
